@@ -17,11 +17,12 @@
         }
 
         .contenedor {
-            width: 80%;
-            height: 30%;
+            width: 700px;
+            height: 300px;
             background-color: rgba(105, 102, 102, 0.151);
             display: grid;
             place-items: center;
+            position: relative;
         }
 
         h1 {
@@ -50,42 +51,44 @@
             margin-left: 30px;
         }
     </style>
-    <script>
-        function botonNo(){
-            alert('Sabia que no eras inteligente🤣🤣🤣🤣🤣🤣');
-        }
-
-        // btn = document.querySelector('.btn')
-        function botonSi(){
-            let contenedor = document.querySelector('.contenedor')
-
-            let width = contenedor.offsetWidth;
-            let height = contenedor.offfsetHeight;
-
-
-            // anchoBoton = btn.offsetWidth;
-            // altoBoton = btn.soffsetHeight;
-
-            console.log(contenedor)
-
-            let newWidth = (Math.random() * width);
-            let newHeight = (Math.random() * height);
-
-            document.getElementById('btnSi').style.position = "absolute";
-            document.getElementById('btnSi').style.left = newWidth + "px";
-            document.getElementById('btnSi').style.top = newHeight + "px";
-            
-
-        }
-    </script>
+    
 </head>
 <body>
     <div class="contenedor">
         <h1>Eres Inteligente?</h1>
         <div class="contenedor-boton">
-            <button id="btnSi" class="btn" onmousemove="botonSi()">Si</button>
-            <button class="btn" onclick="botonNo()">No</button>
+            <button id="btnSi" class="btn" class="btn" onmousemove="botonSi()">Si</button>
+            <button  onclick="botonNo()">No</button>
         </div>
     </div>
+    <script>
+        function botonNo(){
+            alert('Sabia que no eras inteligente🤣🤣🤣🤣🤣🤣');
+        }
+
+        function botonSi(){
+            let contenedor = document.querySelector('.contenedor');
+            let btn = document.querySelector('.btn')
+
+            let width = contenedor.offsetWidth;
+            let height = contenedor.offsetHeight;
+
+            console.log(contenedor.offsetHeight)
+            let anchoBoton = btn.offsetWidth;
+            let altoBoton = btn.offsetHeight;
+
+            console.log(btn.offsetWidth)
+
+            let newWidth = (Math.random() * width - anchoBoton);
+            let newHeight = (Math.random() * height - altoBoton);
+
+            document.getElementById('btnSi').style.position = "absolute";
+            document.getElementById('btnSi').style.left = newWidth + "px";
+            document.getElementById('btnSi').style.top = newHeight + "px";
+
+        }
+
+
+    </script>
 </body>
 </html>
