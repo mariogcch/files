@@ -16,6 +16,14 @@
             margin: 0;
         }
 
+        .contenedor {
+            width: 80%;
+            height: 30%;
+            background-color: rgba(105, 102, 102, 0.151);
+            display: grid;
+            place-items: center;
+        }
+
         h1 {
             color: white;
             text-shadow: 0px 5px 5px rgba(0,0,0,0.5);
@@ -49,17 +57,19 @@
 
         // btn = document.querySelector('.btn')
         function botonSi(){
-            width = window.innerWidth;
-            height = window.innerHeight;
+            let contenedor = document.querySelector('.contenedor')
+
+            let width = contenedor.offsetWidth;
+            let height = contenedor.offfsetHeight;
 
 
             // anchoBoton = btn.offsetWidth;
             // altoBoton = btn.soffsetHeight;
 
-            // console.log(btn)
+            console.log(contenedor)
 
-            newWidth = (Math.random() * width);
-            newHeight = (Math.random() * height);
+            let newWidth = (Math.random() * width);
+            let newHeight = (Math.random() * height);
 
             document.getElementById('btnSi').style.position = "absolute";
             document.getElementById('btnSi').style.left = newWidth + "px";
@@ -72,8 +82,10 @@
 <body>
     <div class="contenedor">
         <h1>Eres Inteligente?</h1>
-        <button id="btnSi" class="btn" onmousemove="botonSi()">Si</button>
-        <button class="btn" onclick="botonNo()">No</button>
+        <div class="contenedor-boton">
+            <button id="btnSi" class="btn" onmousemove="botonSi()">Si</button>
+            <button class="btn" onclick="botonNo()">No</button>
+        </div>
     </div>
 </body>
 </html>
