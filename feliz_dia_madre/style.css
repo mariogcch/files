@@ -1,0 +1,166 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body 
+{
+    font-family: 'Rubik Puddles', cursive;
+    font-size: 28px;
+    width: 100vh;
+    color: white;
+    background: linear-gradient(to bottom right,#fef6e4,#8bd3dd,#f582ae,#15c27a,#f3d2c1);
+    animation: anime 5s linear infinite alternate;
+    height: 100vh;
+    background-size: 200% 200%;
+}
+
+h1{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    text-shadow: 0px 0px 10px rgb(204, 236, 21);
+    text-transform: uppercase;
+}
+
+section {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* overflow: hidden; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section .set {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+section .set div {
+    position: absolute;
+    display: block;
+}
+
+section .set div:nth-child(1){
+    left: 20%;
+    animation: animate 15s linear infinite;
+    animation-delay: -7s;
+}
+
+section .set div:nth-child(2){
+    left: 50%;
+    animation: animate 20s linear infinite;
+    animation-delay: -5s;
+}
+
+section .set div:nth-child(3){
+    left: 70%;
+    animation: animate 20s linear infinite;
+    animation-delay: 0s;
+}
+
+section .set div:nth-child(4){
+    left: 0%;
+    animation: animate 15s linear infinite;
+    animation-delay: -5s;
+}
+
+section .set div:nth-child(5){
+    left: 85%;
+    animation: animate 18s linear infinite;
+    animation-delay: -10s;
+}
+
+section .set div:nth-child(6){
+    left: 0%;
+    animation: animate 12s linear infinite;
+}
+
+section .set div:nth-child(7){
+    left: 15%;
+    animation: animate 14s linear infinite;
+}
+
+section .set div:nth-child(8){
+    left: 60%;
+    animation: animate 18s linear infinite;
+}
+
+.letra {
+    color: #000;
+    font-family: 'Source Code Pro', monospace;
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    animation: letra_animadas 360s linear 1 ;
+}
+
+@keyframes anime
+{
+    from
+    {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 100% 100%;
+    }
+}
+
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+        top: -10%;
+        transform: translateX(20px) rotate(0deg);
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    20% {
+        transform: translateX(-20px) rotate(45deg);
+    }
+    
+    40% {
+        transform: translateX(-20px) rotate(90deg);
+    }
+
+    60% {
+        transform: translateX(20px) rotate(180deg);
+    }
+
+    80% {
+        transform: translateX(-20px) rotate(180deg);
+    }
+
+    100% {
+        top: 110%;
+        transform: translateX(-20px) rotate(225deg);
+    }
+}
+
+@keyframes letra_animadas {
+    from{
+        top: 220%;
+    }
+
+    to{
+        top: -500%;
+    }
+}
