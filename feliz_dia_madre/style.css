@@ -106,7 +106,17 @@ section .set div:nth-child(8){
     display: flex;
     text-align: center;
     flex-direction: column;
-    animation: letra_animadas 360s linear 1 ;
+    animation: letra_animadas 360s linear 1;
+    font-weight: 300;
+    text-shadow: 0px 0px 10px yellow;
+}
+
+@media (max-width: 420px){
+    .letra {
+        width: 250px;
+
+    }
+
 }
 
 @keyframes anime
@@ -157,10 +167,10 @@ section .set div:nth-child(8){
 
 @keyframes letra_animadas {
     from{
-        top: 220%;
+        top: 368%;
     }
 
     to{
-        top: -500%;
+        top: -600%;
     }
 }
